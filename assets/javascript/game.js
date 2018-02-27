@@ -3,19 +3,20 @@ var availWords = ["cockatiel", "parrot", "duck","penguin"];
 
 // Get a random word from the list
 var selectedWord = availWords[Math.floor(Math.random() * availWords.length)];
-console.log(selectedWord);
 
 // Game should start out with selectedWord.length;
-console.log(selectedWord.length);
 var wordArr = [];
-
+var wordStr = "";
 var word = document.getElementById("displayWord");
 for (let i = 0; i < selectedWord.length; i++){ 
     wordArr.push("_ ");
-    console.log(wordArr);
+   
+    wordStr+="_ ";
+  
     
 }
-console.log(wordArr);
+//console.log(wordArr);
+//console.log(wordStr);
 word.innerHTML = wordArr;
 
 
@@ -28,8 +29,10 @@ document.onkeyup = function(event) {
     for (let i = 0; i < selectedWord.length; i++) {
         if (event.key == selectedWord.charAt(i)){
             wordArr.splice(i,1,event.key);
+            wordStr.replace()
         }
     }
+  
     word.innerHTML = wordArr;
 }
 //look for the selected letter
