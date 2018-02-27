@@ -10,14 +10,10 @@ var wordStr = "";
 var word = document.getElementById("displayWord");
 for (let i = 0; i < selectedWord.length; i++){ 
     wordArr.push("_ ");
-   
     wordStr+="_ ";
-  
-    
 }
-//console.log(wordArr);
-//console.log(wordStr);
-word.innerHTML = wordArr;
+
+word.innerHTML = wordArr.join("");
 
 
 //user enters
@@ -32,10 +28,9 @@ document.onkeyup = function(event) {
             wordStr.replace()
         }
     }
-  
-    word.innerHTML = wordArr;
+    word.innerHTML = wordArr.join(" ");
 }
-//look for the selected letter
+
 
 
 
