@@ -19,4 +19,13 @@ console.log(wordArr);
 word.innerHTML = wordArr;
 
 
+//user enters
+var userText = document.getElementById("user-text");
+document.onkeyup = function(event) {
+    console.log(event);
+    userText.textContent = event.key;
+}
+//look for the selected letter
+
+
 
