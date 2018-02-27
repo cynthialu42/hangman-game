@@ -6,14 +6,21 @@ var selectedWord = availWords[Math.floor(Math.random() * availWords.length)];
 
 // Game should start out with selectedWord.length;
 var wordArr = [];
-var wordStr = "";
-var word = document.getElementById("displayWord");
+
+// array of guessed letters
+var guessed = [];
+
+// number of guesses
+//var countDown = selectedWord.length *2;
+
+var displayWord = document.getElementById("display-word");
+var guessedWord = document.getElementById("letters-guessed");
 for (let i = 0; i < selectedWord.length; i++){ 
     wordArr.push("_ ");
-    wordStr+="_ ";
+ 
 }
 
-word.innerHTML = wordArr.join("");
+displayWord.innerHTML = wordArr.join(" ");
 
 
 //user enters
@@ -24,11 +31,12 @@ document.onkeyup = function(event) {
     //look for selected letter
     for (let i = 0; i < selectedWord.length; i++) {
         if (event.key == selectedWord.charAt(i)){
-            wordArr.splice(i,1,event.key);
-            wordStr.replace()
+            wordArr.splice(i,1,event.key);   
         }
     }
-    word.innerHTML = wordArr.join(" ");
+    guessed.push(event.key);
+    displayWord.innerHTML = wordArr.join(" ");
+    guessedWord.innerHTML = guessed.join(" ");
 }
 
 
