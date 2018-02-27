@@ -11,10 +11,12 @@ var wordArr = [];
 var guessed = [];
 
 // number of guesses
-//var countDown = selectedWord.length *2;
+var countDown = selectedWord.length *2;
 
 var displayWord = document.getElementById("display-word");
 var guessedWord = document.getElementById("letters-guessed");
+var guessesLeft = document.getElementById("guesses-left");
+
 for (let i = 0; i < selectedWord.length; i++){ 
     wordArr.push("_ ");
  
@@ -35,8 +37,16 @@ document.onkeyup = function(event) {
         }
     }
     guessed.push(event.key);
+    countDown--;
     displayWord.innerHTML = wordArr.join(" ");
     guessedWord.innerHTML = guessed.join(" ");
+    if(countDown>0){
+        guessesLeft.innerHTML = countDown;
+    }
+    else if (countDown === 0)
+        guessesLeft.innerHTML = "Game Over";
+    else
+        location.reload();
 }
 
 
