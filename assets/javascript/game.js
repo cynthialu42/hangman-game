@@ -28,7 +28,7 @@ displayWord.innerHTML = wordArr.join(" ");
 //user enters
 var userText = document.getElementById("user-text");
 document.onkeyup = function(event) {
-    console.log(event);
+
     userText.textContent = event.key;
     //look for selected letter
     for (let i = 0; i < selectedWord.length; i++) {
@@ -40,7 +40,12 @@ document.onkeyup = function(event) {
     countDown--;
     displayWord.innerHTML = wordArr.join(" ");
     guessedWord.innerHTML = guessed.join(" ");
-    if(countDown>0){
+    
+    if(countDown>0 && (wordArr.join("")==selectedWord)){
+        guessesLeft.innerHTML = "You Win!";
+        countDown = -1;
+    }
+    else if(countDown>0){
         guessesLeft.innerHTML = countDown;
     }
     else if (countDown === 0)
