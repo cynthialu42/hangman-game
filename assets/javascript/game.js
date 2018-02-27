@@ -24,6 +24,13 @@ var userText = document.getElementById("user-text");
 document.onkeyup = function(event) {
     console.log(event);
     userText.textContent = event.key;
+    //look for selected letter
+    for (let i = 0; i < selectedWord.length; i++) {
+        if (event.key == selectedWord.charAt(i)){
+            wordArr.splice(i,1,event.key);
+        }
+    }
+    word.innerHTML = wordArr;
 }
 //look for the selected letter
 
