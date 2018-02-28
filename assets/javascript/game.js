@@ -1,6 +1,7 @@
 //List of hangman words
-var availWords = ["cockatiel", "parrot", "duck","penguin"];
-var jokeQ = ["cockatiel","parrot","duck","penguin"];
+var jokeQ = ["What do you give a sick bird?","What kind of math do birds do?","What do you call an uncomfortable situation?","How many birds can play at this game?"];
+var availWords = ["tweetment", "owlgebra", "hawkward","toucan"];
+
 
 // chosen string
 var chosenIndex = Math.floor(Math.random() * availWords.length);
@@ -25,15 +26,19 @@ for (let i = 0; i < selectedWord.length; i++){
 //join gets rid of the , in the array
 displayWord.innerHTML = wordArr.join(" ");
 
-function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    e.target.classList.remove('playing');
-  }
 
-function changeImage() {
-const key = document.querySelector(".left-image");
-
-key.classList.add('playing');
+function changeImage(countDown) {
+    const key = document.querySelector(".start-image");
+    key.classList.add('hide');
+    if(countDown === -1){
+        const win = document.querySelector(".win-image");
+        win.classList.add('show');
+    }
+    else{
+        const fail = document.querySelector(".fail-image");
+        fail.classList.add('show');
+    }
+    
 }
 
 //const keys = Array.from(document.querySelectorAll('.key'));
@@ -64,13 +69,15 @@ document.onkeyup = function(event) {
     if(countDown>0 && (wordArr.join("")==selectedWord)){
         guessesLeft.innerHTML = "You Win! Press any key to play again";
         countDown = -1;
+        changeImage(countDown);
     }
     else if(countDown>0){
         guessesLeft.innerHTML = countDown;
     }
     else if (countDown === 0){
+        displayWord.innerHTML = selectedWord;
         guessesLeft.innerHTML = "Game Over! Press any key to play again";
-        changeImage();
+        changeImage(countDown);
     }  
     else{
         location.reload();
