@@ -49,7 +49,7 @@ document.onkeyup = function(event) {
         guessesLeft.innerHTML = countDown;
     }
     else if (countDown === 0)
-        guessesLeft.innerHTML = "Game Over! Press any key to play again";
+        guessesLeft.innerHTML = "Game Over! \n Press any key to play again";
     else
         location.reload();
 }

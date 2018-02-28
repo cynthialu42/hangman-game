@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Pompiere" rel="stylesheet">
+
     
 </head>
 <body class="background-img">
@@ -15,22 +17,27 @@
     </header>
 
     <div class="content-wrapper">
-        <div class="left-column">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam aliquid architecto vitae quis? Soluta enim officiis odit libero a nesciunt saepe ipsam alias. Quis, distinctio. Blanditiis similique illo aspernatur quisquam.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam eligendi, sint enim quod nulla facilis molestias dolorem iure provident rerum blanditiis at quis fuga dolores dolore consectetur beatae! Tenetur, tempora.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ab sint, officia similique perspiciatis ipsam nisi pariatur quaerat nemo eveniet neque libero in? Labore excepturi ad sit. Dolorum, officia laborum.
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, explicabo quos nesciunt asperiores labore non voluptatum enim. Voluptatem, numquam maxime adipisci molestias recusandae dolorum, alias magnam sunt qui suscipit dolore.
+        <div class="column">
+            <div class="column-container">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur cum tenetur, accusamus magni dolores quia error nesciunt doloribus alias repellendus officiis fugit quae odio ipsa iure architecto. Dolore, cumque praesentium.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam magnam modi saepe, corporis illo odio. Porro nesciunt necessitatibus, ab repellat velit nulla ad laudantium beatae aspernatur officiis eaque itaque ipsum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora debitis perferendis optio ullam laudantium culpa tenetur reiciendis delectus incidunt earum, cupiditate aut, placeat magni, eos possimus id voluptatum. Perspiciatis, quae.
+            </div>
         </div>
-        <div class="right-column">
-            <div>Current Word</div>
-            <div id="display-word">...</div>
-            <div>You chose:</div><span id = "user-text">...</span>
-            <div>Letters Guessed: </div><span id = "letters-guessed">...</span>
-            <div>Guesses Left: </div><span id = "guesses-left">...</span>
+        <div class="column">
+            <div class="column-container">
+                <div class="section-title words">Current Word</div>
+                <div class="words" id="display-word">...</div>
+                <div class="section-title words">You chose:</div><span class="words"id = "user-text">...</span>
+                <div class="section-title words">Guesses Left: </div><span class="words" id = "guesses-left">...</span>
+                <div class="section-title words">Letters Guessed: </div><span class="words" id = "letters-guessed">...</span>
+            </div>
+            
+           
         </div>
     </div>
 
-    <footer>
+    <footer class="footer">
         © 2018 Cynthia Lu 
     </footer>
     <script src="./assets/javascript/game.js"></script>

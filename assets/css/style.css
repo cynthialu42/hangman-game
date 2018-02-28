@@ -14,4 +14,58 @@
     align-content: center;
     margin: auto;
     margin-top: 2em;
+    margin-bottom: 8em;
+}
+
+
+.column{
+    display: flex;
+    width: 50%;
+    background: purple;
+    align-content: center;
+    justify-content: center;
+    border: 2px dotted yellow;
+}
+
+.column-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 90%;
+    background: greenyellow;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.words{
+    display: flex;
+    width: 100%;
+    background: red;
+    margin: auto;
+    justify-content: center;
+    font-family: 'Pompiere', cursive;
+    margin-bottom: 10px;
+    font-size: 3em;
+}
+
+.section-title{
+    font-weight: bold;
+}
+
+.footer{
+    display: flex;
+    width: 100%;
+    height: 5em;
+    position: relative;
+    bottom: 0;
+    position: fixed;
+    background: #666666;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 10px;
+    color: #dddddd;
+    border-top: 5px solid #4aaaa5;
+    margin-top: 4em;
+}
 }
