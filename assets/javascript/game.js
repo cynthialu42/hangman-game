@@ -1,6 +1,7 @@
 //List of hangman words
 var jokeQ = ["What do you give a sick bird?","What kind of math do birds do?","What do you call an uncomfortable situation?","How many birds can play at this game?"];
 var availWords = ["tweetment", "owlgebra", "hawkward","toucan"];
+var test=true;
 
 
 // chosen string
@@ -27,6 +28,7 @@ for (let i = 0; i < selectedWord.length; i++){
 displayWord.innerHTML = wordArr.join(" ");
 
 
+
 function changeImage(countDown) {
     const key = document.querySelector(".start-image");
     key.classList.add('hide');
@@ -46,7 +48,8 @@ function changeImage(countDown) {
 //window.addEventListener('keydown', playSound);
 
 //Get user input
-document.onkeyup = function(event) {
+
+document.onkeyup = function(event) {   
     jokeQuestion.innerHTML = selectedQuestion;
     userText.textContent = event.key;
     //look for selected letter, if found, put it in wordArr
