@@ -1,0 +1,17 @@
+.title {
+    font-size: x-large;
+    display: flex;
+    background: green;
+    justify-content: center;
+    height: 3em;
+}
+
+.content-wrapper{
+    display: flex;
+    width: 80%;
+    background: yellow;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    margin-top: 2em;
+}
