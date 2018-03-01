@@ -6,6 +6,7 @@ var countDown;
 var selectedWord;
 var selectedQuestion;
 var wins = 0;
+var startGame = true;
 
 // Set up variables for printing to screen
 var displayWord = document.getElementById("display-word");
@@ -169,12 +170,17 @@ function runGame(selectedKey){
 // Get user input
 document.onkeyup = function(event) {  
     var keyPress = event.key;  
+    if (startGame){
+        initGame();
+        countDown++;
+        startGame=false;
+    }
     runGame(keyPress);  
 }
 
 
 // Begin the game
-initGame();
+//initGame();
 
 
 
