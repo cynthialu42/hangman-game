@@ -170,6 +170,7 @@ function runGame(selectedKey){
 // Get user input
 document.onkeyup = function(event) {  
     var keyPress = event.key;  
+    // Begin the game
     if (startGame){
         initGame();
         countDown++;
@@ -179,8 +180,7 @@ document.onkeyup = function(event) {
 }
 
 
-// Begin the game
-//initGame();
+
 
 
 
