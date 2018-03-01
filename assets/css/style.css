@@ -132,9 +132,10 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Fontdiner Swanky', cursive;
     font-size: 1em;
     color: white;
+    padding: 1em 0em;
 
 }
 
@@ -150,4 +151,17 @@
 
 .larger{
     transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px){
+    .content-wrapper{
+        flex-wrap: wrap;
+    }
+    .left-column{
+        width: 100%;
+    }
+    .right-column{
+        margin-top: 4em;
+        width: 100%;
+    }
 }
