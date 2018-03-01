@@ -1,8 +1,34 @@
-.title {
-    font-size: x-large;
+.background-img{
+    background-image: url(../images/green_cup.png);
+}
+
+.background-dark{
+    background-image: url(../images/darkness.png);
+}
+
+.background-grey{
+    background-image: url(../images/tweed.png);
+}
+.header-wrapper{
+    padding: 1em 0em;
     display: flex;
-    justify-content: center;
-    height: 3em;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+.title {
+    font-size: 4em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-family: 'Fontdiner Swanky', cursive;
+}
+.btn-style{
+    font-family: 'Pompiere', cursive;
+    font-size: 2em;
+    text-align: center;
+    border: 2px dotted green;
+    background-color: none;
 }
 
 .content-wrapper{
@@ -13,10 +39,16 @@
     margin-top: 2em;
     margin-bottom: 3em;
 }
+.space{
+    width: 100%;
+    margin: 1em 0em;
+}
 .left-column{
     width: 45%;
     padding: 25px;
-    border: 2px dotted yellow;
+    align-content: center;
+    justify-content: center;
+
 
 }
 .right-column{
@@ -24,9 +56,12 @@
     width: 45%;
     align-content: center;
     justify-content: center;
-    border: 2px dotted yellow;
+    border: 2px dotted black;
 }
 
+.pink-border{
+    border: 2px dotted rgb(255, 0, 234);
+}
 .column-container{
     display: flex;
     flex-wrap: wrap;
@@ -37,24 +72,36 @@
 }
 
 .start-image{
-   width: 100%;
-   height: auto;
-   float: left;
+    padding-top: 4em;
+    padding-left: 3em;
+    width: 100%;
+    height: auto;
+    float: left;
     
 }
 
 .win-image{
+    padding-top: 2em;
+    padding-left: 3em;
     width: 100%;
     height: auto;
     display: none;
 }
 
 .fail-image{
+    padding-top: 2em;
+    padding-left: 3em;
     width: 100%;
     height: auto;
     display: none;
 }
-
+.bonus-image{
+    padding-top: 2em;
+    padding-left: 3em;
+    width: 100%;
+    height: auto;
+    display: none;
+}
 .words{
     display: flex;
     width: 100%;
@@ -64,35 +111,43 @@
     margin-bottom: 10px;
     font-size: 3em;
     text-align: center;
+    
 }
+
+.smaller{
+    font-size: 2em;
+}
+
 
 .section-title{
     font-weight: bold;
+    line-height: 1.3em;
 }
 
 .footer{
     display: flex;
     width: 100%;
-    height: 5em;
     position: relative;
     bottom: 0;
-   
-    background: #666666;
     text-align: center;
     justify-content: center;
     align-items: center;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-    font-size: 10px;
-    color: #dddddd;
-    border-top: 5px solid #4aaaa5;
+    font-size: 1em;
+    color: white;
+
 }
 
 .hide {
-    
     display: none;
   }
 
 .show{
-    transform: scale(1.5);
     display: block;
+    transform: scale(1.5);
+    float: right;
+}
+
+.larger{
+    transform: scale(1.2);
 }

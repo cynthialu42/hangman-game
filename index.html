@@ -7,31 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Pompiere" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky|Pompiere" rel="stylesheet">
 
     
 </head>
 <body class="background-img">
-    <header>
-        <div class="title">Placeholder Title</div>
+    <header class="header-wrapper">
+        <div class="title">Party Parrot Puns!</div>
+        <div class="nav">
+            <div class="words wins smaller">Wins: </div><span class="words smaller" id = "total-wins">...</span>
+            <!--<button type="button" class="btn-style" id="refresh-btn" onclick="reload()">Reload Game</button>-->
+        </div>
     </header>
 
     <div class="content-wrapper">
         <div class="left-column">
-                  
-                <img class = "start-image" src="./assets/images/buddy.png"/>
-                <img class="win-image" src="./assets/images/buncho.png"/>
-                <img class="fail-image" src="./assets/images/10fps.gif"/>
+
+                <img class = "img start-image" src="./assets/images/partyparrotgreen.gif"/>
+                <img class= "img win-image" src="./assets/images/partyparrot.gif"/>
+                <img class= "img fail-image" src="./assets/images/grey.png"/>
+                <img class= "img bonus-image" src="./assets/images/glasses.gif"/>
            
         </div>
         <div class="right-column">
             <div class="column-container">
                 <div class="section-title words" id = "joke-question">Press any key to start!</div>
                 <div class="words" id="display-word">...</div>
-                <div class="section-title words">You chose:</div><span class="words"id = "user-text">...</span>
-                <div class="section-title words">Guesses Left: </div><span class="words" id = "guesses-left">...</span>
-                <div class="words">Wins:</div><span class="words" id = "total-wins">...</span>
+                <div class="space"></div>
+                <div class="section-title words">Guesses Left: </div><span class="words" id = "guesses-left">...</span> 
+                <div class="space"></div>              
                 <div class="section-title words">Letters Guessed: </div><span class="words" id = "letters-guessed">...</span>
+                
             </div>
             
            
