@@ -1,7 +1,6 @@
 //List of hangman words
 var jokeQ = ["What do you give a sick bird?","What kind of math do birds do?","What do you call an uncomfortable situation?","How many birds can play at this game?"];
 var availWords = ["tweetment", "owlgebra", "hawkward","toucan"];
-var test=true;
 
 
 // chosen string
@@ -12,6 +11,7 @@ var selectedQuestion = jokeQ[chosenIndex];
 var wordArr = [];
 var guessed = [];
 var countDown = selectedWord.length *2;
+var win = 0;
 
 //set up variables for printing to screen
 var displayWord = document.getElementById("display-word");
@@ -19,6 +19,7 @@ var lettersGuessed = document.getElementById("letters-guessed");
 var guessesLeft = document.getElementById("guesses-left");
 var userText = document.getElementById("user-text");
 var jokeQuestion = document.getElementById("joke-question");
+var totalWins = document.getElementById("total-wins");
 
 //get an array of underscores
 for (let i = 0; i < selectedWord.length; i++){ 
@@ -26,7 +27,6 @@ for (let i = 0; i < selectedWord.length; i++){
 }
 //join gets rid of the , in the array
 displayWord.innerHTML = wordArr.join(" ");
-
 
 
 function changeImage(countDown) {
@@ -42,11 +42,6 @@ function changeImage(countDown) {
     }
     
 }
-
-//const keys = Array.from(document.querySelectorAll('.key'));
-//keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-//window.addEventListener('keydown', playSound);
-
 //Get user input
 
 document.onkeyup = function(event) {   
@@ -72,6 +67,8 @@ document.onkeyup = function(event) {
     if(countDown>0 && (wordArr.join("")==selectedWord)){
         guessesLeft.innerHTML = "You Win! Press any key to play again";
         countDown = -1;
+        win++;
+        totalWins.innerHTML = win;
         changeImage(countDown);
     }
     else if(countDown>0){

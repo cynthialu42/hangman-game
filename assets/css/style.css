@@ -1,7 +1,6 @@
 .title {
     font-size: x-large;
     display: flex;
-    background: green;
     justify-content: center;
     height: 3em;
 }
@@ -9,7 +8,6 @@
 .content-wrapper{
     display: flex;
     width: 90%;
-    background: yellow;
     justify-content: space-between;
     margin: auto;
     margin-top: 2em;
@@ -17,7 +15,6 @@
 }
 .left-column{
     width: 45%;
-    background: rgb(67, 58, 185);
     padding: 25px;
     border: 2px dotted yellow;
 
@@ -25,7 +22,6 @@
 .right-column{
     display: flex;
     width: 45%;
-    background: purple;
     align-content: center;
     justify-content: center;
     border: 2px dotted yellow;
@@ -36,7 +32,6 @@
     flex-wrap: wrap;
     align-content: center;
     width: 90%;
-    background: greenyellow;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -63,7 +58,6 @@
 .words{
     display: flex;
     width: 100%;
-    background: red;
     margin: auto;
     justify-content: center;
     font-family: 'Pompiere', cursive;
