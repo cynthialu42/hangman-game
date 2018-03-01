@@ -15,12 +15,14 @@ var guessesLeft = document.getElementById("guesses-left");
 var userText = document.getElementById("user-text");
 var jokeQuestion = document.getElementById("joke-question");
 var totalWins = document.getElementById("total-wins");
+var guessesLeftTitle = document.getElementById("guesses-left-title");
 
 // Clear out arrays
 function reset(){
     wordArr = [];
     guessed = [];
     lettersGuessed.innerHTML = guessed;
+    guessesLeftTitle.innerHTML = "Guesses Left:";
 }
 
 // Initialize game and choose word
@@ -148,7 +150,8 @@ function runGame(selectedKey){
     
     // Check if win, lose, or continue
     if(countDown>0 && (wordArr.join("")==selectedWord)){
-        guessesLeft.innerHTML = "You Win! Press any key to play again";
+        guessesLeftTitle.innerHTML = "PARTY YEAH!";
+        guessesLeft.innerHTML = "Press any key to play again";
         countDown = -1;
         wins++;
         totalWins.innerHTML = wins;
@@ -159,7 +162,8 @@ function runGame(selectedKey){
     }
     else if (countDown === 0){
         displayWord.innerHTML = selectedWord;
-        guessesLeft.innerHTML = "Game Over! Press any key to play again";
+        guessesLeftTitle.innerHTML = "Party Pooper :("
+        guessesLeft.innerHTML = "Press any key to play again";
         changeImage(countDown);
     }  
     else{
