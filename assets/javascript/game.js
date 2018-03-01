@@ -36,7 +36,6 @@ function initGame(){
         "Coo coo~",
         "Waddle waddle sliiiide!",
         "What kind of bird is this guy over here?"
-
     ];
 
     var availWords = [
@@ -50,7 +49,6 @@ function initGame(){
         "pigeon",
         "penguin",
         "kakapo"
-
     ];
 
     var chosenIndex = Math.floor(Math.random() * availWords.length);
@@ -134,6 +132,7 @@ function changeImage(countDown) {
 // Run game depending on key pressed
 function runGame(selectedKey){
 
+    // Replace underscore with letter if correct
     for (let i = 0; i < selectedWord.length; i++) {
         if (selectedKey == selectedWord.charAt(i)){
             wordArr.splice(i, 1, selectedKey);
@@ -168,9 +167,9 @@ function runGame(selectedKey){
 }
 
 // Get user input
-document.onkeyup = function(event) {   
+document.onkeyup = function(event) {  
     var keyPress = event.key;  
-    runGame(keyPress);    
+    runGame(keyPress);  
 }
 
 
