@@ -1,15 +1,13 @@
-//List of hangman words
-//var jokeQ = ["What do you give a sick bird?","What kind of math do birds do?","What do you call an uncomfortable situation?","How many birds can play at this game?"];
-//var availWords = ["tweetment", "owlgebra", "hawkward","toucan"];
 
-var wordArr;;
-var guessed;;
+// Declare global variables
+var wordArr;
+var guessed;
 var countDown;
 var selectedWord;
 var selectedQuestion;
 var wins = 0;
 
-//set up variables for printing to screen
+// Set up variables for printing to screen
 var displayWord = document.getElementById("display-word");
 var lettersGuessed = document.getElementById("letters-guessed");
 var guessesLeft = document.getElementById("guesses-left");
@@ -17,12 +15,14 @@ var userText = document.getElementById("user-text");
 var jokeQuestion = document.getElementById("joke-question");
 var totalWins = document.getElementById("total-wins");
 
+// Clear out arrays
 function reset(){
     wordArr = [];
     guessed = [];
     lettersGuessed.innerHTML = guessed;
 }
 
+// Initialize game and choose word
 function initGame(){
     reset();
     var jokeQ = [
@@ -38,6 +38,7 @@ function initGame(){
         "What kind of bird is this guy over here?"
 
     ];
+
     var availWords = [
         "tweetment", 
         "owlgebra", 
@@ -51,22 +52,27 @@ function initGame(){
         "kakapo"
 
     ];
+
     var chosenIndex = Math.floor(Math.random() * availWords.length);
 
     selectedWord = availWords[chosenIndex];
     selectedQuestion = jokeQ[chosenIndex];
+
     countDown = selectedWord.length *2;
 
+    // Add underscores to the array for the chosen word
     for (let i = 0; i < selectedWord.length; i++){ 
         wordArr.push("_ ");
     }
+    
+    // Display chosen word and associated question and guesses to screen
     jokeQuestion.innerHTML = selectedQuestion;
     displayWord.innerHTML = wordArr.join(" ");
     guessesLeft.innerHTML = countDown;
-
     changeImage(countDown);
 }
 
+// Change images and styling depending on wins and losses
 function changeImage(countDown) {
 
     const start = document.querySelector(".start-image");
@@ -79,6 +85,7 @@ function changeImage(countDown) {
     const pinkBorder = document.querySelector(".right-column");
 
     if(countDown === -1){
+        // Bonus cool party parrot shows up every 5 wins
         if (wins%5 === 0){
             start.classList.add('hide');
             bonus.classList.add('show');
@@ -89,6 +96,7 @@ function changeImage(countDown) {
             pinkBorder.classList.add('pink-border');
         }
         else{
+            // Otherwise regular party parrot
             start.classList.add('hide');
             win.classList.add('show');
             dark.classList.add('background-dark');
@@ -100,6 +108,7 @@ function changeImage(countDown) {
         
     }
     else if (countDown === 0){
+        // Show disappointed parrot
         start.classList.add('hide');
         fail.classList.add('show');
         tweed.classList.add('background-grey');
@@ -108,6 +117,7 @@ function changeImage(countDown) {
         }
     }
     else{
+        // Remove all the temp classes and reset
         start.classList.remove('hide');
         win.classList.remove('show');
         fail.classList.remove('show');
@@ -121,7 +131,7 @@ function changeImage(countDown) {
     }
 }
 
-//Get user input
+// Run game depending on key pressed
 function runGame(selectedKey){
 
     for (let i = 0; i < selectedWord.length; i++) {
@@ -132,11 +142,11 @@ function runGame(selectedKey){
 
     guessed.push(selectedKey);
     lettersGuessed.innerHTML = guessed.join(" ");
-
     displayWord.innerHTML = wordArr.join(" ");
     
     countDown--;
     
+    // Check if win, lose, or continue
     if(countDown>0 && (wordArr.join("")==selectedWord)){
         guessesLeft.innerHTML = "You Win! Press any key to play again";
         countDown = -1;
@@ -157,16 +167,14 @@ function runGame(selectedKey){
     }
 }
 
+// Get user input
 document.onkeyup = function(event) {   
     var keyPress = event.key;  
     runGame(keyPress);    
 }
 
-function reload(){
-    location.reload();
-}
 
-
+// Begin the game
 initGame();
 
 
