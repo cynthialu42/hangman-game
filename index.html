@@ -12,24 +12,25 @@
     
 </head>
 <body class="background-img">
+    <!-- Title and win count -->
     <header class="header-wrapper">
         <div class="title">Party Parrot Puns!</div>
         <div class="nav">
-            <div class="words wins smaller">Wins: </div><span class="words smaller" id = "total-wins">...</span>
-            <!--<button type="button" class="btn-style" id="refresh-btn" onclick="reload()">Reload Game</button>-->
+            <div class="words smaller">Wins: </div><span class="words smaller" id = "total-wins">...</span>
         </div>
     </header>
 
     <div class="content-wrapper">
+        <!-- Parrot Images -->
         <div class="left-column">
-
-                <img class = "img start-image" src="./assets/images/partyparrotgreen.gif"/>
-                <img class= "img win-image" src="./assets/images/partyparrot.gif"/>
-                <img class= "img fail-image" src="./assets/images/grey.png"/>
-                <img class= "img bonus-image" src="./assets/images/glasses.gif"/>
-           
+                <img class = "start-image" src="./assets/images/partyparrotgreen.gif"/>
+                <img class= "win-image" src="./assets/images/partyparrot.gif"/>
+                <img class= "fail-image" src="./assets/images/grey.png"/>
+                <img class= "bonus-image" src="./assets/images/glasses.gif"/>
         </div>
+
         <div class="right-column">
+            <!-- Game space -->
             <div class="column-container">
                 <div class="section-title words" id = "joke-question">Press any key to start!</div>
                 <div class="words" id="display-word">...</div>
@@ -37,13 +38,11 @@
                 <div class="section-title words">Guesses Left: </div><span class="words" id = "guesses-left">...</span> 
                 <div class="space"></div>              
                 <div class="section-title words">Letters Guessed: </div><span class="words" id = "letters-guessed">...</span>
-                
             </div>
-            
-           
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
         © 2018 Cynthia Lu 
     </footer>
