@@ -1,3 +1,4 @@
+/* Classes for the background change */
 .background-img{
     background-image: url(../images/green_cup.png);
 }
@@ -9,6 +10,8 @@
 .background-grey{
     background-image: url(../images/tweed.png);
 }
+
+/* Header elements */
 .header-wrapper{
     padding: 1em 0em;
     display: flex;
@@ -16,6 +19,7 @@
     width: 90%;
     margin: auto;
 }
+
 .title {
     font-size: 4em;
     text-align: center;
@@ -23,14 +27,8 @@
     align-items: center;
     font-family: 'Fontdiner Swanky', cursive;
 }
-.btn-style{
-    font-family: 'Pompiere', cursive;
-    font-size: 2em;
-    text-align: center;
-    border: 2px dotted green;
-    background-color: none;
-}
 
+/* Body Styling */
 .content-wrapper{
     display: flex;
     width: 90%;
@@ -39,18 +37,28 @@
     margin-top: 2em;
     margin-bottom: 3em;
 }
+
+.column-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .space{
     width: 100%;
     margin: 1em 0em;
 }
+
 .left-column{
     width: 45%;
     padding: 25px;
     align-content: center;
     justify-content: center;
-
-
 }
+
 .right-column{
     display: flex;
     width: 45%;
@@ -62,22 +70,34 @@
 .pink-border{
     border: 2px dotted rgb(255, 0, 234);
 }
-.column-container{
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    width: 90%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+
+.section-title{
+    font-weight: bold;
+    line-height: 1.3em;
 }
 
+.words{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    font-family: 'Pompiere', cursive;
+    margin-bottom: 10px;
+    font-size: 3em;
+    text-align: center; 
+}
+
+.smaller{
+    font-size: 2em;
+}
+
+/* Images styling */
 .start-image{
     padding-top: 4em;
     padding-left: 3em;
     width: 100%;
     height: auto;
-    float: left;
-    
+    float: left; 
 }
 
 .win-image{
@@ -95,6 +115,7 @@
     height: auto;
     display: none;
 }
+
 .bonus-image{
     padding-top: 2em;
     padding-left: 3em;
@@ -102,28 +123,9 @@
     height: auto;
     display: none;
 }
-.words{
-    display: flex;
-    width: 100%;
-    margin: auto;
-    justify-content: center;
-    font-family: 'Pompiere', cursive;
-    margin-bottom: 10px;
-    font-size: 3em;
-    text-align: center;
-    
-}
-
-.smaller{
-    font-size: 2em;
-}
 
 
-.section-title{
-    font-weight: bold;
-    line-height: 1.3em;
-}
-
+/* Footer styling */
 .footer{
     display: flex;
     width: 100%;
@@ -139,6 +141,7 @@
 
 }
 
+/* Special Styling for JS */
 .hide {
     display: none;
   }
@@ -153,6 +156,7 @@
     transform: scale(1.2);
 }
 
+/* Media Query will stack the left and right columns */
 @media screen and (max-width: 768px){
     .content-wrapper{
         flex-wrap: wrap;
