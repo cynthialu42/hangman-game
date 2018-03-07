@@ -59,8 +59,9 @@ function initGame(){
     selectedWord = availWords[chosenIndex];
     selectedQuestion = jokeQ[chosenIndex];
 
+    // Guesses depend on the word length
     countDown = selectedWord.length *2;
-
+ 
     // Add underscores to the array for the chosen word
     for (let i = 0; i < selectedWord.length; i++){ 
         wordArr.push("_ ");
@@ -177,10 +178,12 @@ document.onkeyup = function(event) {
     // Begin the game
     if (startGame){
         initGame();
-        countDown++;
         startGame=false;
     }
-    runGame(keyPress);  
+    else{
+        runGame(keyPress); 
+    }
+     
 }
 
 
