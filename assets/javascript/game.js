@@ -38,7 +38,8 @@ function initGame(){
         "Hoot hoot!",
         "Coo coo~",
         "Waddle waddle sliiiide!",
-        "What kind of bird is this guy over here?"
+        "What kind of bird is this guy over here?",
+        "Pikachu bird!"
     ];
 
     var availWords = [
@@ -51,16 +52,19 @@ function initGame(){
         "owl",
         "pigeon",
         "penguin",
-        "kakapo"
+        "kakapo",
+        "cockatiel"
     ];
 
+    // Choose a random word
     var chosenIndex = Math.floor(Math.random() * availWords.length);
 
+    // Match the word with the question
     selectedWord = availWords[chosenIndex];
     selectedQuestion = jokeQ[chosenIndex];
 
-    // Guesses depend on the word length
-    countDown = selectedWord.length *2;
+    // 10 guesses for each word
+    countDown = 10;
  
     // Add underscores to the array for the chosen word
     for (let i = 0; i < selectedWord.length; i++){ 
@@ -135,6 +139,7 @@ function changeImage(countDown) {
 
 // Run game depending on key pressed
 function runGame(selectedKey){
+    let tempArr = wordArr.toString();
 
     // Replace underscore with letter if correct
     for (let i = 0; i < selectedWord.length; i++) {
@@ -143,11 +148,15 @@ function runGame(selectedKey){
         }
     }
 
+    // If no letter was guessed right, decrement a guess
+    if (tempArr == wordArr.toString()){
+        countDown--;
+    }
+
+    // Display the updated results
     guessed.push(selectedKey);
     lettersGuessed.innerHTML = guessed.join(" ");
     displayWord.innerHTML = wordArr.join(" ");
-    
-    countDown--;
     
     // Check if win, lose, or continue
     if(countDown>0 && (wordArr.join("")==selectedWord)){
@@ -175,11 +184,12 @@ function runGame(selectedKey){
 // Get user input
 document.onkeyup = function(event) {  
     var keyPress = event.key;  
-    // Begin the game
+    // Initialize the game just once
     if (startGame){
         initGame();
-        startGame=false;
+        startGame = false;
     }
+    // Play the game the rest of the time
     else{
         runGame(keyPress); 
     }
