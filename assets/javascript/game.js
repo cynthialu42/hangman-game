@@ -184,7 +184,7 @@ function runGame(selectedKey){
 
 // Get user input
 document.onkeyup = function(event) {  
-    var keyPress = event.key;  
+    var keyPress = event.key.toLowerCase();  
     // Initialize the game just once
     if (startGame){
         initGame();
@@ -194,7 +194,7 @@ document.onkeyup = function(event) {
     else{
         runGame(keyPress); 
     }
-     
+
 }
 
 
