@@ -28,6 +28,7 @@ function reset(){
 // Initialize game and choose word
 function initGame(){
     reset();
+
     var jokeQ = [
         "What do you give a sick bird?",
         "What kind of math do birds do?",
@@ -92,7 +93,7 @@ function changeImage(countDown) {
 
     if(countDown === -1){
         // Bonus cool party parrot shows up every 5 wins
-        if (wins%5 === 0){
+        if (wins % 5 === 0){
             start.classList.add('hide');
             bonus.classList.add('show');
             dark.classList.add('background-dark');
@@ -143,13 +144,13 @@ function runGame(selectedKey){
 
     // Replace underscore with letter if correct
     for (let i = 0; i < selectedWord.length; i++) {
-        if (selectedKey == selectedWord.charAt(i)){
+        if (selectedKey === selectedWord.charAt(i)){
             wordArr.splice(i, 1, selectedKey);
         }
     }
 
     // If no letter was guessed right, decrement a guess
-    if (tempArr == wordArr.toString()){
+    if (tempArr === wordArr.toString()){
         countDown--;
     }
 
@@ -159,7 +160,7 @@ function runGame(selectedKey){
     displayWord.innerHTML = wordArr.join(" ");
     
     // Check if win, lose, or continue
-    if(countDown>0 && (wordArr.join("")==selectedWord)){
+    if(countDown > 0 && (wordArr.join("") === selectedWord)){
         guessesLeftTitle.innerHTML = "PARTY YEAH!";
         guessesLeft.innerHTML = "Press any key to play again";
         countDown = -1;
@@ -167,7 +168,7 @@ function runGame(selectedKey){
         totalWins.innerHTML = wins;
         changeImage(countDown);
     }
-    else if(countDown>0){
+    else if(countDown > 0){
         guessesLeft.innerHTML = countDown;
     }
     else if (countDown === 0){
